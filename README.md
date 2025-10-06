@@ -1,5 +1,5 @@
 # System-Cleaner-Old-Files-Windows
-Script en PowerShell para borrar archivos según antigüedad en carpetas de Windows. 
+Script en PowerShell para liberar espacio borrando en Windows archivos temporales y de ruta específica según antigüedad indicada. 
 
 # 🧹 System Cleaner Script (SystemCleaner.ps1)
 

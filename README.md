@@ -17,6 +17,7 @@ config.json Estructura
   "FolderPath": "C:\\Ruta\\Carpeta \\A\\Limpiar",
   "DaysOld": <cantidad en días>
 }
+```
 
 Ejemplo
 ```bash
@@ -24,6 +25,7 @@ Ejemplo
   "FolderPath": "C:\\Usuario\\Downloads",
   "DaysOld": 365
 }
+```
 
 ## 📦 Qué Hace el Script
 1. Lectura de Configuración: Lee config.json para obtener FolderPath y DaysOld.
@@ -46,6 +48,7 @@ El script se ejecuta a través de PowerShell. No necesita argumentos de línea d
 
 ```bash
 .\SystemCleaner.ps1
+```
 
 # ⚠️ Consideraciones de Seguridad y Permisos
 - El script necesita permisos de escritura y eliminación sobre todas las rutas que intenta limpiar, incluyendo las carpetas temporales de Windows y la ruta especificada en FolderPath.

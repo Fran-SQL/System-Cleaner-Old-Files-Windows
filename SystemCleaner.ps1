@@ -68,7 +68,7 @@ foreach ($path in $tempPaths) {
 
         $after = Get-FolderSize $path # calcular el tamño después del borrado con $after
         $freed = [math]::Round(($before - $after), 2) # calcular diferencia y hacer redondeo
-        Write-Log "Espacio liberado en $path : $freed MB"
+        Write-Log "Espacio liberado en $path : $freed MB" # Registrar el espacio liberado
     } else {
         Write-Log "Ruta no encontrada: $path"
     }
@@ -80,10 +80,16 @@ Write-Log "Eliminando archivos de más de $daysOld días en: $folderPath"
 $oldFiles = Get-ChildItem -Path $folderPath -Recurse -File | # listar todos los archivos de la carpeta objetivo
     Where-Object { $_.LastWriteTime -lt (Get-Date).AddDays(-$daysOld) } # filtra los que fueron modificados hace más de $daysOld días
 
+# Calcular el espacio total que ocupan los archivos antes de eliminarlos
+$bytesFreed = ($oldFiles | Measure-Object -Property Length -Sum).Sum # Suma el tamaño en bytes
+$spaceFreedMB = [math]::Round(($bytesFreed / 1MB), 2) # Convierte a MB y redondea a 2 decimales
+
 foreach ($file in $oldFiles) {
     Remove-Item $file.FullName -Force -ErrorAction SilentlyContinue # borrar cada archivo que corresponda
 }
 
 Write-Log "Archivos antiguos eliminados: $($oldFiles.Count)" # registrar cantidad archivos eliminados
+
+Write-Log "Espacio liberado por archivos antiguos: $spaceFreedMB MB" # Registrar el espacio liberado
 
 Write-Log "=== Limpieza finalizada correctamente ==="

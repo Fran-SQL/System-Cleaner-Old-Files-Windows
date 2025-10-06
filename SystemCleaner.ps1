@@ -3,11 +3,24 @@
 # Script para limpiar archivos temporales y liberar espacio
 # =============================================
 
+# Leer configuración desde JSON. 
+# En JSON se especifica qué carpeta se quiere controlar y cuántos días de antigüedad deben tener para ser borrados
+$configPath = "$PSScriptRoot\config.json"
+if (Test-Path $configPath) {
+    $config = Get-Content $configPath | ConvertFrom-Json
+} else {
+    Write-Host "No se encontró config.json"
+    exit
+}
+
 # --- CONFIGURACIÓN ---
+$folderPath = $config.FolderPath # variable del JSON para carpeta
+$daysOld = [int]$config.DaysOld # variable del JSON para antigüedad
 $fecha = Get-Date -Format "yyyy-MM-dd_HH-mm-ss" # Obtiene fecha y hora actual
 $logDir = "$PSScriptRoot\logs" # ruta donde se guardarán los logs
 $logFile = "$logDir\cleanup_log_$fecha.txt" # nombre del log generado con fecha incluida
-$daysOld = 366  # define cuántos días debe tener un archivo para ser eliminado
+
+Write-Host "Eliminar archivos con más de $daysOld días"
 
 # Crear carpeta de logs si no existe
 if (!(Test-Path -Path $logDir)) { # Si no existe la ruta $logDir (ruta/logs) entonces...
@@ -62,10 +75,9 @@ foreach ($path in $tempPaths) {
 }
 
 # --- LIMPIAR ARCHIVOS ANTIGUOS EN CARPETA ---
-$target_file = "$env:USERPROFILE\OneDrive\Documentos\Sony" # carpeta que se limpia
-Write-Log "Eliminando archivos de más de $daysOld días en: $target_file"
+Write-Log "Eliminando archivos de más de $daysOld días en: $folderPath"
 
-$oldFiles = Get-ChildItem -Path $target_file -Recurse -File | # listar todos los archivos de la carpeta objetivo
+$oldFiles = Get-ChildItem -Path $folderPath -Recurse -File | # listar todos los archivos de la carpeta objetivo
     Where-Object { $_.LastWriteTime -lt (Get-Date).AddDays(-$daysOld) } # filtra los que fueron modificados hace más de $daysOld días
 
 foreach ($file in $oldFiles) {

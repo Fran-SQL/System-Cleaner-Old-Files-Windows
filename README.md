@@ -11,7 +11,7 @@ Este script requiere un archivo llamado **config.json** en el mismo directorio p
 
 ¡IMPORTANTE! Para que el script funcione, debes crear un archivo llamado config.json basado en el siguiente ejemplo:
 
-config.json Estructura
+Estructura config.json:
 ```bash
 {
   "FolderPath": "C:\\Ruta\\Carpeta \\A\\Limpiar",
@@ -19,7 +19,7 @@ config.json Estructura
 }
 ```
 
-Ejemplo
+Ejemplo:
 ```bash
 {
   "FolderPath": "C:\\Usuario\\Downloads",

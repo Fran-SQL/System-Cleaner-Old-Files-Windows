@@ -55,7 +55,7 @@ foreach ($path in $tempPaths) {
 
         $after = Get-FolderSize $path # calcular el tamño después del borrado con $after
         $freed = [math]::Round(($before - $after), 2) # calcular diferencia y hacer redondeo
-        Write-Log "Espacio liberado en $path: $freed MB"
+        Write-Log "Espacio liberado en $path : $freed MB"
     } else {
         Write-Log "Ruta no encontrada: $path"
     }

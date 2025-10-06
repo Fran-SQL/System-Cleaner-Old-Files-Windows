@@ -54,6 +54,7 @@ El script se ejecuta a través de PowerShell. No necesita argumentos de línea d
 
 Lo que se muestra por consola es lo mismo que se registra en el log. 
 
+```Fragmento de código
 cleanup_log_2025-10-07_01-02-08.txt:
 [2025-10-07 01:02:08] === Inicio de limpieza del sistema ===
 [2025-10-07 01:02:08] Limpiando carpeta temporal: C:\Users\abc\AppData\Local\Temp
@@ -64,6 +65,7 @@ cleanup_log_2025-10-07_01-02-08.txt:
 [2025-10-07 01:02:08] Archivos antiguos eliminados: 235
 [2025-10-07 01:02:08] Espacio liberado por archivos antiguos: 0.65 MB
 [2025-10-07 01:02:08] === Limpieza finalizada correctamente ===
+```
 
 # ⚠️ Consideraciones de Seguridad y Permisos
 - El script necesita permisos de escritura y eliminación sobre todas las rutas que intenta limpiar, incluyendo las carpetas temporales de Windows y la ruta especificada en FolderPath.

@@ -37,7 +37,7 @@ Ejemplo:
 4. Generación de Logs: Registra todas las acciones, incluyendo el espacio liberado de las carpetas en un archivo de log.
 
 ## 📜 Archivos de Log
-El script crea una carpeta logs en su mismo directorio. Cada ejecución genera un archivo de log con fecha y hora para un seguimiento detallado, siguiendo el patrón: cleanup_log_YYYY-MM-DD_HH-mm-ss.txt.
+El script crea una carpeta logs en su mismo directorio. Cada ejecución genera un archivo de log con fecha y hora para un seguimiento detallado, siguiendo el patrón "cleanup_log_YYYY-MM-DD_HH-mm-ss.txt".
 
 ## 🚀 Uso
 

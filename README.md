@@ -56,7 +56,7 @@ Ejemplo:
 cleanup_log_2025-10-07_01-02-08.txt:
 [2025-10-07 01:02:08] === Inicio de limpieza del sistema ===
 [2025-10-07 01:02:08] Limpiando carpeta temporal: C:\Users\abc\AppData\Local\Temp
-[2025-10-07 01:02:08] Espacio liberado en C:\Users\abc\AppData\Local\Temp : -0.08 MB
+[2025-10-07 01:02:08] Espacio liberado en C:\Users\abc\AppData\Local\Temp : 8 MB
 [2025-10-07 01:02:08] Limpiando carpeta temporal: C:\WINDOWS\Temp
 [2025-10-07 01:02:08] Espacio liberado en C:\WINDOWS\Temp : 0 MB
 [2025-10-07 01:02:08] Eliminando archivos de más de 365 días en: C:\Users\abc\Downloads

@@ -51,7 +51,8 @@ El script se ejecuta a través de PowerShell. No necesita argumentos de línea d
 
 Lo que se muestra por consola es lo mismo que se registra en el log. 
 
-```Fragmento de código
+Ejemplo:
+```
 cleanup_log_2025-10-07_01-02-08.txt:
 [2025-10-07 01:02:08] === Inicio de limpieza del sistema ===
 [2025-10-07 01:02:08] Limpiando carpeta temporal: C:\Users\abc\AppData\Local\Temp

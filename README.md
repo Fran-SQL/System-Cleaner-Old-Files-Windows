@@ -77,7 +77,7 @@ Qué hace automatizar_systemcleaner.ps1:
 
 Para programar la tarea con automatizar_systemcleaner.ps1:
 
-bash:
+PowerShell (con permisos de administrador):
 ```
 powershell.exe -ExecutionPolicy Bypass -File "C:\ruta\automatizar_systemcleaner.ps1"
 ```

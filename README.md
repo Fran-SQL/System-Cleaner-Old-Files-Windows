@@ -9,7 +9,7 @@ Este script requiere un archivo llamado **config.json** en el mismo directorio p
 ¡IMPORTANTE! Para que el script funcione, debes crear un archivo llamado config.json basado en el siguiente ejemplo:
 
 Estructura config.json:
-```bash
+```
 {
   "FolderPath": "C:\\Ruta\\Carpeta \\A\\Limpiar",
   "DaysOld": <cantidad en días>
@@ -17,7 +17,7 @@ Estructura config.json:
 ```
 
 Ejemplo:
-```bash
+```
 {
   "FolderPath": "C:\\Usuario\\Downloads",
   "DaysOld": 365
@@ -43,7 +43,8 @@ El script crea una carpeta logs en su mismo directorio. Cada ejecución genera u
 
 El script se ejecuta a través de PowerShell. No necesita argumentos de línea de comandos, ya que toda su configuración se extrae del archivo `config.json`.
 
-```bash
+bash:
+```
 .\SystemCleaner.ps1
 ```
 
@@ -63,6 +64,28 @@ cleanup_log_2025-10-07_01-02-08.txt:
 [2025-10-07 01:02:08] Archivos antiguos eliminados: 235
 [2025-10-07 01:02:08] Espacio liberado por archivos antiguos: 0.65 MB
 [2025-10-07 01:02:08] === Limpieza finalizada correctamente ===
+```
+
+## ⏲️ Programar Uso
+
+Lo interesante de este tipo de script es que se ejecute solo de manera automática. Esto se puede configurar manualmente con el "programador de tareas" (Task Scheduler) o con el script automatizar_systemcleaner.ps1. 
+
+Qué hace automatizar_systemcleaner.ps1:
+- Crea la tarea "SystemCleaner_Automatico" en el Task Scheduler
+- Programa la ejecución diariamente a las 10:30AM.
+- Usa la cuenta SYSTEM para garantizar permisos elevados (para poder limpiar carpetas del sistema como Temp).
+
+Para programar la tarea con automatizar_systemcleaner.ps1:
+
+```
+powershell.exe -ExecutionPolicy Bypass -File "C:\ruta\automatizar_systemcleaner.ps1"
+```
+
+Para quitar la tarea programada:
+
+PowerShell:
+```
+Unregister-ScheduledTask -TaskName "SystemCleaner_Automatico" -Confirm:$false
 ```
 
 # ⚠️ Consideraciones de Seguridad y Permisos

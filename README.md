@@ -1,6 +1,6 @@
 # 🧹 System Cleaner Script (SystemCleaner.ps1)
 
-Este script de PowerShell (`SystemCleaner.ps1`) está diseñado para realizar tareas de limpieza automática del sistema, enfocándose en la eliminación de archivos temporales del sistema operativo y en la purga de archivos antiguos dentro de una carpeta específica de tu elección.
+Este script de PowerShell (`SystemCleaner.ps1`) está diseñado para realizar tareas de limpieza automática del sistema, enfocándose en la eliminación de archivos temporales del sistema operativo y en archivos antiguos dentro de una carpeta específica de tu elección.
 
 ## ⚙️ Configuración Obligatoria
 

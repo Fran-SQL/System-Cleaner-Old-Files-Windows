@@ -1,1 +1,4 @@
 config.json
+
+# Ignora la carpeta 'logs' y todo su contenido
+logs/

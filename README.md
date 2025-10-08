@@ -71,7 +71,7 @@ cleanup_log_2025-10-07_01-02-08.txt:
 Lo interesante de este tipo de script es que se ejecute solo de manera automática. Esto se puede configurar manualmente con el "programador de tareas" (Task Scheduler) o con el script automatizar_systemcleaner.ps1. 
 
 Qué hace automatizar_systemcleaner.ps1:
-- Crea la tarea "SystemCleaner_Automatico" en el Task Scheduler
+- Crea la tarea "SystemCleaner_Automatico" en Task Scheduler
 - Programa la ejecución diariamente a las 10:30AM.
 - Usa la cuenta SYSTEM para garantizar permisos elevados (para poder limpiar carpetas del sistema como Temp).
 

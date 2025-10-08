@@ -3,8 +3,8 @@
 # Script para limpiar archivos temporales y liberar espacio
 # =============================================
 
-# Leer configuración desde JSON. 
-# En JSON se especifica qué carpeta se quiere controlar y cuántos días de antigüedad deben tener para ser borrados
+# --- LEER JSON ---
+# En JSON se especifica qué carpeta se quiere controlar y cuántos días de antigüedad deben tener los archivos de esa carpeta para ser borrados
 $configPath = "$PSScriptRoot\config.json"
 if (Test-Path $configPath) {
     $config = Get-Content $configPath | ConvertFrom-Json
